@@ -6,7 +6,7 @@
 /*   By: egatien <egatien@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/21 16:15:43 by egatien           #+#    #+#             */
-/*   Updated: 2024/10/27 17:58:59 by egatien          ###   ########.fr       */
+/*   Updated: 2024/11/04 17:19:32 by egatien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -36,6 +36,8 @@ char	*ft_strdup(char *src)
 	while (src[i] != '\0')
 		i++;
 	dupli = malloc(i * sizeof(char) + 1);
+	if (dupli == NULL)
+		return (NULL);
 	ft_strcpy(dupli, src);
 	return (dupli);
 }

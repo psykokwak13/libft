@@ -6,7 +6,7 @@
 /*   By: egatien <egatien@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 11:10:20 by egatien           #+#    #+#             */
-/*   Updated: 2024/10/27 17:41:30 by egatien          ###   ########.fr       */
+/*   Updated: 2024/11/06 10:28:49 by egatien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,8 +16,8 @@
 
 char	*ft_memchr(const void *s, int searched, size_t size)
 {
-	const char	*arr;
-	size_t		i;
+	const unsigned char	*arr;
+	size_t				i;
 
 	i = 0;
 	arr = s;

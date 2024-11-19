@@ -6,7 +6,7 @@
 /*   By: egatien <egatien@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 08:46:55 by egatien           #+#    #+#             */
-/*   Updated: 2024/10/27 18:02:34 by egatien          ###   ########.fr       */
+/*   Updated: 2024/11/04 18:10:44 by egatien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -18,12 +18,10 @@ static char	*ft_strncat(char *dest, const char *src, unsigned int nb)
 	unsigned int	j;
 	unsigned int	i;
 
-	j = 0;
 	i = 0;
+	j = 0;
 	while (dest[i] != '\0')
-	{
 		i++;
-	}
 	while (src[j] != '\0' && j < nb)
 	{
 		dest[i] = src[j];
@@ -38,16 +36,16 @@ size_t	ft_strlcat(char *dst, const char *src, size_t size)
 {
 	size_t	dst_size;
 	size_t	src_size;
-	int		space;
+	size_t	space;
 
 	src_size = ft_strlen(src);
 	dst_size = ft_strlen(dst);
-	if (dst_size >= size)
+	if (size <= dst_size)
+	{
 		return (size + src_size);
+	}
 	space = size - dst_size - 1;
-	if (space >= 0)
-		ft_strncat(dst, src, space);
-	dst[size - 1] = '\0';
+	ft_strncat(dst, src, space);
 	return (dst_size + src_size);
 }
 

@@ -6,7 +6,7 @@
 /*   By: egatien <egatien@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/16 13:27:02 by egatien           #+#    #+#             */
-/*   Updated: 2024/10/22 12:56:34 by egatien          ###   ########.fr       */
+/*   Updated: 2024/11/04 16:32:08 by egatien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -21,6 +21,8 @@ void	*ft_memcpy(void *dest, const void *src, size_t n)
 
 	d = (unsigned char *)dest;
 	s = (unsigned char *)src;
+	if (s == NULL && d == NULL)
+		return (NULL);
 	while (n--)
 		*d++ = *s++;
 	return (dest);

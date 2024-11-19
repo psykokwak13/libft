@@ -6,7 +6,7 @@
 /*   By: egatien <egatien@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 09:27:32 by egatien           #+#    #+#             */
-/*   Updated: 2024/10/24 10:52:21 by egatien          ###   ########.fr       */
+/*   Updated: 2024/11/06 10:38:56 by egatien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,26 +16,26 @@
 
 char	*ft_strrchr(const char *s, int c)
 {
-	int		index;
-	char	*last_occurrence;
+	char			*last;
+	unsigned char	ca;
 
-	last_occurrence = NULL;
-	index = 0;
-	while (s[index] != '\0')
+	ca = (unsigned char)c;
+	last = NULL;
+	while (*s)
 	{
-		if (s[index] == (char)c)
-			last_occurrence = (char *)&s[index];
-		index++;
+		if (*s == ca)
+			last = (char *)s;
+		s++;
 	}
-	if (c == '\0')
-		return ((char *)(s + index));
-	return (last_occurrence);
+	if (ca == '\0')
+		return ((char *)s);
+	return ((char *)last);
 }
 
 /*
 int main ()
 {
-    printf("%s \n",ft_strrchr("non desole",'t'));
-    printf("%s \n",ft_strrchr("non tesole",'t'));
+    printf("%s \n",ft_strrchr("teste",'\0'));
+    printf("%s \n",ft_strrchr("teste",'\0'));
 }
 */

@@ -6,7 +6,7 @@
 /*   By: egatien <egatien@student.42lehavre.fr>     +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/10/17 09:12:19 by egatien           #+#    #+#             */
-/*   Updated: 2024/10/24 15:28:21 by egatien          ###   ########.fr       */
+/*   Updated: 2024/11/04 17:54:19 by egatien          ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,13 +16,16 @@
 
 char	*ft_strchr(const char *s, int c)
 {
-	while (*s != '\0')
+	unsigned char	cha;
+
+	cha = (unsigned char)c;
+	while (*s)
 	{
-		if (*s == (char)c)
+		if (*s == cha)
 			return ((char *)s);
 		s++;
 	}
-	if (c == '\0')
+	if (cha == '\0')
 		return ((char *)s);
 	return (NULL);
 }
